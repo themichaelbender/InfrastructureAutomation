@@ -6,7 +6,7 @@ Get-WmiObject -Class Win32_LogicalDisk -Filter "Drivetype=3" -ComputerName Local
      select Name, @{n="Total Freespace";E={ "{0:N2}" -f ($_.freespace/1GB) }}
 
 
-#regionMOl Examples - Ch21
+#region MOl Examples - Ch21
 
     #region - repeatable commands - Get-DiskInventory.ps1
         #use Pipe '|' or command ',' to continue line of code
@@ -40,7 +40,7 @@ Get-WmiObject -Class Win32_LogicalDisk -Filter "Drivetype=3" -ComputerName Local
     #region - Creating a Parameterized Script
     #Allowing parameter value input when runnig script
 
-#Create a parameter block for computername where localhost is default
+    #Create a parameter block for computername where localhost is default
     param (
             $computername = 'localhost'
     )
